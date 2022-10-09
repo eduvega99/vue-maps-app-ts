@@ -3,8 +3,9 @@ import { PlacesState } from './state';
 
 
 const mutation: MutationTree<PlacesState> = {
-    someMutation( /* state: ExampleStateInterface */) {
-        // a line to prevent linter errors
+    setLngLat(state: PlacesState, coords: GeolocationCoordinates) {
+        state.userLocation = [coords.longitude, coords.latitude];
+        state.isLoading = false;
     }
 }
 
