@@ -1,9 +1,13 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
   <router-view/>
+  <img
+    class="vue-logo"
+    src="./assets/logo.png" alt="Vue Logo"
+  >
 </template>
 
 <style>
@@ -26,5 +30,12 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.vue-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 100px;
 }
 </style>
