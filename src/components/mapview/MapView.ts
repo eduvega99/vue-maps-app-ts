@@ -23,6 +23,15 @@ export default defineComponent({
                 center: userLocation.value,
                 zoom: 15,
             });
+
+            const myLocationPopUp = new Mapboxgl.Popup()
+                .setLngLat(userLocation.value)
+                .setHTML(`<b>Mi ubicación</b><p>Actualmente en Arucas</p>`);
+
+            const myLocationMarker = new Mapboxgl.Marker()
+                .setLngLat(userLocation.value)
+                .setPopup(myLocationPopUp)
+                .addTo(map);
         }
 
         onMounted(() => {
