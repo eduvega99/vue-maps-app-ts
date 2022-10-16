@@ -4,6 +4,7 @@ import { useStore } from 'vuex'
 import { StateInterface } from '@/store';
 import Mapboxgl from 'mapbox-gl';
 import { Feature } from '@/interfaces/places';
+import { LngLat } from '@/store/map/actions';
 
 
 export const useMapStore = () => {
@@ -15,6 +16,7 @@ export const useMapStore = () => {
         duration: computed(() => store.state.map.duration),
 
         // Actions
+        getRoutesBetweenPoints: (start: LngLat, end: LngLat) => store.dispatch('map/getRoutesBetweenPoints', { start, end }),
 
         // Getters
         isMapReady: computed<boolean>(() => store.getters['map/isMapReady']),

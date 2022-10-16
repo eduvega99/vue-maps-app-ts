@@ -4,8 +4,10 @@ import axios from 'axios';
 const directionsApi = axios.create({
     baseURL: 'https://api.mapbox.com/directions/v5/mapbox/driving/',
     params: {
-        limit: 3,
-        language: 'es',
+        alternatives: false,
+        geometries: 'geojson',
+        overview: 'simplified',
+        steps: false,
         access_token: 'pk.eyJ1IjoiZWR1dmVnYTk5IiwiYSI6ImNreGRrYzhubTBzcTYzMG1tNDZmamlndXEifQ.SMEa2HqhckApopx2hdyLQw'
     }
 });
