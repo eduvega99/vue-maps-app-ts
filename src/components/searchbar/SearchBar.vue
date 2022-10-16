@@ -8,7 +8,6 @@
       class="form-control"
       placeholder="Buscar lugares..."
     >
-    {{ debouncedValue }}
     <SearchResults />
   </div>
 </template>
