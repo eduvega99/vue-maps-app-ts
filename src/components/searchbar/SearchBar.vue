@@ -3,10 +3,12 @@
 <template>
   <div class="searchbar-container">
     <input
+      v-model="searchTerm"
       type="text"
       class="form-control"
       placeholder="Buscar lugares..."
     >
+    {{ debouncedValue }}
     <SearchResults />
   </div>
 </template>
