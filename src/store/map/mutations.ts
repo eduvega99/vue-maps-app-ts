@@ -28,6 +28,13 @@ const mutation: MutationTree<MapState> = {
                 .addTo(state.map!);
             state.markers.push(marker)
         }
+
+        if (state.map?.getLayer('RouteString')) {
+            state.map?.removeLayer('RouteString');
+            state.map?.removeSource('RouteString');
+            state.distance = undefined;
+            state.duration = undefined;
+        }
     },
     setRoutePolilyne(state, coords: number[][]) {
         const start = coords[0];
